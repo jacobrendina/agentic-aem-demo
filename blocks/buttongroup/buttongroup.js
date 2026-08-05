@@ -8,7 +8,7 @@
  */
 export default function decorate(block) {
   const group = document.createElement('div');
-  group.className = 'buttongroup-items';
+  group.className = 'button-group-items';
 
   block.querySelectorAll('a').forEach((a) => {
     // ensure every link in the group renders as a button
