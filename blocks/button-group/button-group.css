@@ -6,7 +6,7 @@
 }
 
 /* fallback: keep links inline even before block JS decorates them */
-.button-group > div {
+.button-group {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
