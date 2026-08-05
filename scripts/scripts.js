@@ -147,6 +147,33 @@ async function loadEager(doc) {
 }
 
 /**
+ * Reveals sections with a subtle fade-and-slide as they scroll into view.
+ * Runs post-LCP. Sections already within the viewport at setup time are shown
+ * immediately (no animation) to avoid a flash of above-the-fold content.
+ * @param {Element} main The main element
+ */
+function decorateScrollReveal(main) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduceMotion.matches || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+
+  main.querySelectorAll(':scope > .section').forEach((section) => {
+    // don't hide/animate what's already on screen
+    if (section.getBoundingClientRect().top < window.innerHeight) return;
+    section.classList.add('section-reveal');
+    observer.observe(section);
+  });
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -155,6 +182,8 @@ async function loadLazy(doc) {
 
   const main = doc.querySelector('main');
   await loadSections(main);
+
+  decorateScrollReveal(main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
