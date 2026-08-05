@@ -1,0 +1,60 @@
+.stats .stats-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background-color: var(--border-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+
+.stats .stats-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--spacing-l) var(--spacing-m);
+  background-color: var(--color-white);
+  text-align: center;
+}
+
+.stats .stats-value {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-forest-600);
+}
+
+.stats .stats-value > * {
+  margin: 0;
+}
+
+.stats .stats-label {
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted-color);
+}
+
+.stats .stats-label > * {
+  margin: 0;
+}
+
+/* accent variant — forest field with light text */
+.stats.accent .stats-list {
+  background-color: rgb(255 255 255 / 15%);
+  border-color: var(--color-forest-800);
+}
+
+.stats.accent .stats-item {
+  background-color: var(--color-forest-800);
+}
+
+.stats.accent .stats-value {
+  color: var(--color-white);
+}
+
+.stats.accent .stats-label {
+  color: var(--color-forest-100);
+}

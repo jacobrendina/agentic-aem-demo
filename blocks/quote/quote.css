@@ -1,0 +1,67 @@
+.quote .quote-figure {
+  margin: 0;
+  padding: var(--spacing-l);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--color-forest-500);
+  border-radius: var(--radius-m);
+  background-color: var(--color-white);
+}
+
+.quote .quote-text {
+  position: relative;
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  line-height: 1.4;
+  color: var(--color-forest-900);
+}
+
+.quote .quote-text > *:first-child {
+  margin-top: 0;
+}
+
+.quote .quote-text > *:last-child {
+  margin-bottom: 0;
+}
+
+.quote .quote-attribution {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--spacing-m);
+}
+
+.quote .quote-name {
+  font-weight: 700;
+  color: var(--color-ink-900);
+}
+
+.quote .quote-role {
+  font-size: var(--body-font-size-s);
+  color: var(--text-muted-color);
+}
+
+/* centered display variant */
+.quote.centered .quote-figure {
+  text-align: center;
+  border-left: 1px solid var(--border-color);
+  border-top: 3px solid var(--color-forest-500);
+}
+
+.quote.centered .quote-attribution {
+  align-items: center;
+}
+
+.quote.centered .quote-text {
+  font-size: var(--heading-font-size-l);
+}
+
+/* large / feature variant */
+.quote.large .quote-text {
+  font-size: var(--heading-font-size-l);
+}
+
+@media (width >= 900px) {
+  .quote .quote-figure {
+    padding: var(--spacing-xl);
+  }
+}

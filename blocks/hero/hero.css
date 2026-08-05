@@ -5,33 +5,127 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background-color: var(--color-forest-900);
+  color: var(--color-forest-100);
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+/* media backdrop */
+.hero .hero-media {
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  z-index: 0;
+  line-height: 0;
 }
 
-.hero img {
-  object-fit: cover;
+.hero .hero-media img,
+.hero .hero-media picture {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+/* scrim so text stays legible over imagery */
+.hero.hero-has-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    100deg,
+    rgb(11 46 34 / 82%) 0%,
+    rgb(11 46 34 / 55%) 45%,
+    rgb(11 46 34 / 20%) 100%
+  );
+}
+
+.hero .hero-body {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--content-padding);
+}
+
+.hero .hero-content {
+  max-width: 640px;
+}
+
+.hero .hero-content > *:first-child {
+  margin-top: 0;
+}
+
+.hero .hero-content h1,
+.hero .hero-content h2 {
+  color: var(--color-white);
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 0.4em;
+}
+
+.hero .hero-content p {
+  font-size: var(--body-font-size-m);
+  color: var(--color-forest-100);
+}
+
+.hero .hero-content a:any-link {
+  color: var(--color-forest-200);
+}
+
+.hero .hero-content .button-wrapper {
+  margin-top: var(--spacing-m);
+}
+
+.hero .hero-content a.button.primary {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-forest-900);
+}
+
+.hero .hero-content a.button.primary:hover,
+.hero .hero-content a.button.primary:focus-visible {
+  border-color: var(--color-forest-100);
+  background-color: var(--color-forest-100);
+  color: var(--color-forest-900);
+}
+
+.hero .hero-content a.button.secondary {
+  border-color: rgb(255 255 255 / 55%);
+  color: var(--color-white);
+}
+
+.hero .hero-content a.button.secondary:hover,
+.hero .hero-content a.button.secondary:focus-visible {
+  border-color: var(--color-white);
+  background-color: rgb(255 255 255 / 12%);
+  color: var(--color-white);
+}
+
+/* text-only variant reads on a light surface */
+.hero:not(.hero-has-media) {
+  background-color: var(--color-forest-50);
+  color: var(--text-color);
+}
+
+.hero:not(.hero-has-media) .hero-content h1,
+.hero:not(.hero-has-media) .hero-content h2 {
+  color: var(--color-forest-900);
+}
+
+.hero:not(.hero-has-media) .hero-content p {
+  color: var(--text-muted-color);
+}
+
+.hero:not(.hero-has-media) .hero-content a:any-link {
+  color: var(--link-color);
 }
 
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 520px;
   }
 }

@@ -1,0 +1,96 @@
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  padding: var(--spacing-l);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-l);
+  background-color: var(--color-forest-50);
+}
+
+.callout .callout-content > *:first-child {
+  margin-top: 0;
+}
+
+.callout .callout-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.callout .callout-content h2,
+.callout .callout-content h3 {
+  color: var(--color-forest-900);
+}
+
+.callout .callout-content p {
+  color: var(--text-muted-color);
+  max-width: 60ch;
+}
+
+.callout .callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.callout .callout-actions .button-wrapper {
+  margin: 0;
+}
+
+/* accent variant — solid forest band */
+.callout.accent {
+  background-color: var(--color-forest-800);
+  border-color: var(--color-forest-800);
+}
+
+.callout.accent .callout-content h2,
+.callout.accent .callout-content h3 {
+  color: var(--color-white);
+}
+
+.callout.accent .callout-content p {
+  color: var(--color-forest-100);
+}
+
+.callout.accent .callout-actions a.button.primary {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-forest-900);
+}
+
+.callout.accent .callout-actions a.button.primary:hover,
+.callout.accent .callout-actions a.button.primary:focus-visible {
+  border-color: var(--color-forest-100);
+  background-color: var(--color-forest-100);
+}
+
+.callout.accent .callout-actions a.button.secondary {
+  border-color: rgb(255 255 255 / 55%);
+  color: var(--color-white);
+}
+
+.callout.accent .callout-actions a.button.secondary:hover,
+.callout.accent .callout-actions a.button.secondary:focus-visible {
+  border-color: var(--color-white);
+  background-color: rgb(255 255 255 / 12%);
+  color: var(--color-white);
+}
+
+/* subtle variant — plain outline on white */
+.callout.subtle {
+  background-color: var(--color-white);
+}
+
+/* horizontal layout on wide screens */
+@media (width >= 900px) {
+  .callout.horizontal {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-l) var(--spacing-xl);
+  }
+
+  .callout.horizontal .callout-actions {
+    flex-shrink: 0;
+  }
+}

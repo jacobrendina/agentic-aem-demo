@@ -1,0 +1,48 @@
+.tabs .tabs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tabs .tabs-tab {
+  appearance: none;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+  background-color: transparent;
+  padding: 0.7em 1.2em;
+  margin-bottom: -1px;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  color: var(--text-muted-color);
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tabs .tabs-tab:hover {
+  color: var(--color-forest-800);
+  background-color: var(--color-forest-50);
+}
+
+.tabs .tabs-tab[aria-selected="true"] {
+  color: var(--color-forest-900);
+  background-color: var(--color-white);
+  border-color: var(--border-color);
+  border-bottom-color: var(--color-white);
+}
+
+.tabs .tabs-panels {
+  border: 1px solid var(--border-color);
+  border-top: 0;
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  padding: var(--spacing-l);
+}
+
+.tabs .tabs-panel > *:first-child {
+  margin-top: 0;
+}
+
+.tabs .tabs-panel > *:last-child {
+  margin-bottom: 0;
+}
