@@ -30,7 +30,7 @@
         {
           "component": "text",
           "valueType": "string",
-          "name": "name",
+          "name": "attribution-name",
           "label": "Attribution Name"
         },
         {
