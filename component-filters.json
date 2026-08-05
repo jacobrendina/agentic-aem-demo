@@ -33,7 +33,7 @@
     ]
   },
   {
-    "id": "buttongroup",
+    "id": "button-group",
     "components": [
       "button"
     ]

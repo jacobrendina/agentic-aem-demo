@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": "buttongroup",
+    "id": "button-group",
     "fields": [
       {
         "component": "select",
