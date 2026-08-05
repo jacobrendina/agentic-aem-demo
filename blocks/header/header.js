@@ -168,4 +168,11 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // add a condensed style once the page is scrolled past the top
+  const setScrolled = () => {
+    navWrapper.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  setScrolled();
+  window.addEventListener('scroll', setScrolled, { passive: true });
 }

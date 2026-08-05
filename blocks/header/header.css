@@ -1,9 +1,29 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  position: sticky;
+  top: 0;
   width: 100%;
-  z-index: 2;
-  position: fixed;
+  z-index: 10;
+  background-color: rgb(255 255 255 / 72%);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* translucent blur where supported */
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  header .nav-wrapper {
+    background-color: rgb(255 255 255 / 62%);
+    backdrop-filter: saturate(150%) blur(12px);
+
+    /* stylelint-disable-next-line property-no-vendor-prefix -- Safari support */
+    -webkit-backdrop-filter: saturate(150%) blur(12px);
+  }
+}
+
+/* condensed state once the page is scrolled */
+header .nav-wrapper.is-scrolled {
+  border-bottom-color: var(--border-color);
+  box-shadow: var(--shadow-s);
 }
 
 header nav {
@@ -31,10 +51,6 @@ header nav[aria-expanded='true'] {
 }
 
 @media (width >= 900px) {
-  header .nav-wrapper {
-    position: relative;
-  }
-
   header nav {
     display: flex;
     justify-content: space-between;

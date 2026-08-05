@@ -5,11 +5,25 @@
   align-items: center;
 }
 
-.buttongroup.centered .buttongroup-items {
+/* fallback: keep links inline even before block JS decorates them */
+.buttongroup > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.buttongroup > div > p {
+  margin: 0;
+}
+
+.buttongroup.centered .buttongroup-items,
+.buttongroup.centered > div {
   justify-content: center;
 }
 
-.buttongroup.end .buttongroup-items {
+.buttongroup.end .buttongroup-items,
+.buttongroup.end > div {
   justify-content: flex-end;
 }
 
