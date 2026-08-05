@@ -1,4 +1,4 @@
-.buttongroup .buttongroup-items {
+.button-group .button-group-items {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -6,32 +6,32 @@
 }
 
 /* fallback: keep links inline even before block JS decorates them */
-.buttongroup > div {
+.button-group > div {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
 }
 
-.buttongroup > div > p {
+.button-group > div > p {
   margin: 0;
 }
 
-.buttongroup.centered .buttongroup-items,
-.buttongroup.centered > div {
+.button-group.centered .button-group-items,
+.button-group.centered > div {
   justify-content: center;
 }
 
-.buttongroup.end .buttongroup-items,
-.buttongroup.end > div {
+.button-group.end .button-group-items,
+.button-group.end > div {
   justify-content: flex-end;
 }
 
-.buttongroup.stacked .buttongroup-items {
+.button-group.stacked .button-group-items {
   flex-direction: column;
   align-items: stretch;
 }
 
-.buttongroup.stacked .buttongroup-items a.button {
+.button-group.stacked .button-group-items a.button {
   width: 100%;
 }
