@@ -4,7 +4,7 @@
  * Collects all authored links/buttons into a single flex row. The boilerplate
  * button decoration (decorateButtons) turns formatted links into .button
  * elements before this runs.
- * @param {Element} block The buttongroup block element
+ * @param {Element} block The button-group block element
  */
 export default function decorate(block) {
   const group = document.createElement('div');
