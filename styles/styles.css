@@ -126,8 +126,8 @@ body {
   font-size: var(--body-font-size-m);
   line-height: 1.6;
 
-  /* max softness on Fraunces headings; ignored by Inter body */
-  font-variation-settings: "SOFT" 100;
+  /* mid softness on Fraunces headings; ignored by Inter body */
+  font-variation-settings: "SOFT" 50;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
 }
